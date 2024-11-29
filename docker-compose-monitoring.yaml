@@ -60,11 +60,8 @@ services:
     image: gcr.io/cadvisor/cadvisor:v0.51.0
     container_name: ${CONTAINER_NAME}-cadvisor
     volumes:
-      - /:/rootfs:ro
-      - /run:/run:ro
-      - /sys:/sys:ro
-      - /var/lib/docker/:/var/lib/docker:ro
-      - /dev/disk/:/dev/disk:ro
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /var/lib/docker/:/var/lib/docker
     devices:
       - /dev/kmsg
     privileged: true
