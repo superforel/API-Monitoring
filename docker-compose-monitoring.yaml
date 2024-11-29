@@ -60,7 +60,6 @@ services:
     image: gcr.io/cadvisor/cadvisor:v0.51.0
     container_name: ${CONTAINER_NAME}-cadvisor
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
       - /:/rootfs:ro
       - /run:/run:ro
       - /sys:/sys:ro
